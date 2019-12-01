@@ -1,0 +1,29 @@
+<div class='container-fluid'>
+  <div class='row'>
+	<h1>Coinmarket data</h1>
+
+	<p>This is current cryptocurrency prices.</p>
+
+	<p *ngIf="!cryptocurrencies"><em>Loading...</em></p>
+
+	<table class='table' *ngIf="cryptocurrencies">
+	  <thead>
+		<tr>
+		  <th>Date</th>
+		  <th>Temp. (C)</th>
+		  <th>Temp. (F)</th>
+		  <th>Summary</th>
+		</tr>
+	  </thead>
+	  <tbody>
+		<tr *ngFor="let cryptocurrency of cryptocurrencies">
+		  <td>{{ cryptocurrency.dateFormatted }}</td>
+		  <td>{{ cryptocurrency.temperatureC }}</td>
+		  <td>{{ cryptocurrency.temperatureF }}</td>
+		  <td>{{ cryptocurrency.summary }}</td>
+		</tr>
+	  </tbody>
+	</table>
+
+  </div>
+</div>
