@@ -4,3 +4,15 @@
     padding-top: 50px;
   }
 }
+
+.spacer25 {
+  height: 25px;
+}
+
+.spacer10 {
+  height: 10px;
+}
+
+.blue-border {
+	border: 1px solid blue;
+}
