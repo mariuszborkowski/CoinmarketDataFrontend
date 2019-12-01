@@ -16,12 +16,12 @@ export class AppComponent {
     }, error => console.error(error));
   }
   
-  public visibleIndex = -1;
-  public showSubItem(ind) {
-    if (this.visibleIndex === ind) {
-      this.visibleIndex = -1;
+  public visibleIndex[];
+  public showSubItem(index) {
+    if (this.visibleIndex[index] === index) {
+      this.visibleIndex[index] = -1;
     } else {
-      this.visibleIndex = ind;
+      this.visibleIndex[index] = index;
     }
   }
   
