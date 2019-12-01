@@ -13,10 +13,16 @@ export class AppComponent {
   constructor(http: HttpClient) {
     http.get<Currency[]>('http://localhost:24432/coinmarketdata').subscribe(result => {
       this.cryptocurrencies = result;
+	  this.cryptocurrencies = this.cryptocurrencies.sort(function(a, b){
+		if(a.cryptocurrencyId < b.cryptocurrencyId) return -1;
+		if(a.cryptocurrencyId > b.cryptocurrencyId) return 1;
+		return 0;
+	});
+	  
     }, error => console.error(error));
   }
-  
-  public visibleIndex[];
+   
+  public visibleIndex = new Array(100) ;
   public showSubItem(index) {
     if (this.visibleIndex[index] === index) {
       this.visibleIndex[index] = -1;
@@ -29,6 +35,7 @@ export class AppComponent {
 
 interface Currency {
   id: number;
+  cryptocurrencyId: number;
   cryptocurrencyName: string;
   cryptocurrencySymbol: string;
   cryptocurrencyRank: string;

@@ -6,11 +6,13 @@
 
 	<p *ngIf="!cryptocurrencies"><em>Loading...</em></p>
   </div>
+  </div>
+    <div class="container-fluid">
 <div *ngFor="let cryptocurrency of cryptocurrencies;let index = index" (click)="showSubItem(index)">
   <div class="blue-border">
 	  <div class="row">
 		<div class="col-sm-3">
-		  <b>ID:</b> {{ cryptocurrency.id }}
+		  <b>ID:</b> {{ cryptocurrency.cryptocurrencyId }}
 		</div>
 		<div class="col-sm-3">
 		  <b>NAME:</b> {{ cryptocurrency.cryptocurrencyName }}
